@@ -19,6 +19,7 @@ import ConfigData from '../../../../../../common/utils/src/main/ets/default/base
 import HeadComponent from '../../../../../../common/component/src/main/ets/default/headComponent';
 import { SubHeader } from '../../../../../../common/component/src/main/ets/default/textComponent';
 import { BrightnessSettingModel } from '../model/displayAndBrightnessImpl/brightness/BrightnessSettingModel';
+import { ScreenTimeoutModel, getScreenTimeoutLabel } from '../model/displayAndBrightnessImpl/screenTimeout/ScreenTimeoutModel';
 
 const BRIGHTNESS_STEP_VALUE = 1;
 
@@ -83,6 +84,8 @@ struct BrightnessSettings {
           SubHeader({ titleContent: $r('app.string.screen') })
 
           ScreenModelComponent()
+
+          ScreenTimeoutComponent()
         }
         .useSizeType({
           sm: { span: 4, offset: 0 },
@@ -175,5 +178,72 @@ export struct ScreenModelComponent {
     .height($r('app.float.wh_value_56'))
     .borderRadius($r('app.float.radius_24'))
     .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"));
+  }
+}
+
+/**
+ * Screen-timeout entry: shows current timeout, navigates to picker page.
+ */
+@Component
+export struct ScreenTimeoutComponent {
+  @State isTouched: boolean = false;
+  @StorageLink('ScreenTimeoutValue') screenTimeoutValue: number = 60000;
+  @State screenTimeoutModel: ScreenTimeoutModel = new ScreenTimeoutModel();
+
+  build() {
+    Navigator({ target: "pages/screenTimeout" }) {
+      Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
+        Text($r('app.string.screenTimeout'))
+          .fontSize($r('app.float.font_16'))
+          .lineHeight($r('app.float.wh_value_22'))
+          .fontWeight(FontWeight.Medium)
+          .fontColor($r("sys.color.ohos_id_color_text_primary"))
+          .margin({ left: $r('app.float.distance_8') })
+          .textAlign(TextAlign.Start);
+
+        Row() {
+          Text(getScreenTimeoutLabel(this.screenTimeoutValue))
+            .fontSize($r('app.float.font_14'))
+            .lineHeight($r('app.float.wh_value_19'))
+            .fontWeight(FontWeight.Regular)
+            .fontColor($r('sys.color.ohos_id_color_text_primary'))
+            .opacity($r("sys.float.ohos_fa_alpha_content_secondary"))
+            .margin({ right: $r('app.float.distance_4') })
+            .textAlign(TextAlign.End);
+
+          Image('/res/image/ic_settings_arrow.svg')
+            .width($r('app.float.wh_value_12'))
+            .height($r('app.float.wh_value_24'))
+            .margin({ right: $r('app.float.distance_8') })
+            .fillColor($r("sys.color.ohos_id_color_primary"))
+            .opacity($r("sys.float.ohos_fa_alpha_content_fourth"))
+        }
+      }
+      .height(ConfigData.WH_100_100)
+      .width(ConfigData.WH_100_100)
+      .borderRadius($r('app.float.radius_20'))
+      .linearGradient(this.isTouched ? {
+        angle: 90,
+        direction: GradientDirection.Right,
+        colors: [[$r("app.color.DCEAF9"), 0.0], [$r("app.color.FAFAFA"), 1.0]]
+      } : {
+        angle: 90,
+        direction: GradientDirection.Right,
+        colors: [[$r("sys.color.ohos_id_color_foreground_contrary"), 1], [$r("sys.color.ohos_id_color_foreground_contrary"), 1]]
+      })
+      .onTouch((event?: TouchEvent | undefined) => {
+        if (event?.type === TouchType.Down) {
+          this.isTouched = true;
+        }
+        if (event?.type === TouchType.Up) {
+          this.isTouched = false;
+        }
+      });
+    }
+    .padding($r('app.float.distance_4'))
+    .height($r('app.float.wh_value_56'))
+    .borderRadius($r('app.float.radius_24'))
+    .backgroundColor($r("sys.color.ohos_id_color_foreground_contrary"))
+    .margin({ top: $r('app.float.distance_8') });
   }
 }

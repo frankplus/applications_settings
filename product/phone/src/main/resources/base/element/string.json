@@ -1863,6 +1863,42 @@
     {
       "name": "pair_cancel",
       "value": "取消"
+    },
+    {
+      "name": "screenTimeout",
+      "value": "休眠"
+    },
+    {
+      "name": "screenTimeout15Seconds",
+      "value": "15 秒"
+    },
+    {
+      "name": "screenTimeout30Seconds",
+      "value": "30 秒"
+    },
+    {
+      "name": "screenTimeout1Minute",
+      "value": "1 分钟"
+    },
+    {
+      "name": "screenTimeout2Minutes",
+      "value": "2 分钟"
+    },
+    {
+      "name": "screenTimeout5Minutes",
+      "value": "5 分钟"
+    },
+    {
+      "name": "screenTimeout10Minutes",
+      "value": "10 分钟"
+    },
+    {
+      "name": "screenTimeout30Minutes",
+      "value": "30 分钟"
+    },
+    {
+      "name": "screenTimeoutNever",
+      "value": "永不"
     }
   ]
 }

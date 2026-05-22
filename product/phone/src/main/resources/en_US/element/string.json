@@ -1849,6 +1849,42 @@
     {
       "name": "pair_cancel",
       "value": "Cancel"
+    },
+    {
+      "name": "screenTimeout",
+      "value": "Screen timeout"
+    },
+    {
+      "name": "screenTimeout15Seconds",
+      "value": "15 seconds"
+    },
+    {
+      "name": "screenTimeout30Seconds",
+      "value": "30 seconds"
+    },
+    {
+      "name": "screenTimeout1Minute",
+      "value": "1 minute"
+    },
+    {
+      "name": "screenTimeout2Minutes",
+      "value": "2 minutes"
+    },
+    {
+      "name": "screenTimeout5Minutes",
+      "value": "5 minutes"
+    },
+    {
+      "name": "screenTimeout10Minutes",
+      "value": "10 minutes"
+    },
+    {
+      "name": "screenTimeout30Minutes",
+      "value": "30 minutes"
+    },
+    {
+      "name": "screenTimeoutNever",
+      "value": "Never"
     }
   ]
 }
