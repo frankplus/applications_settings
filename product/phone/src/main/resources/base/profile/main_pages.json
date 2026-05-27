@@ -37,6 +37,7 @@
     "pages/bluetoothPairedDeviceInfo",
     "pages/screenMode",
     "pages/screenTimeout",
+    "pages/systemNavigation",
     "pages/moreConnections",
     "pages/nfc",
     "pages/compatibilityAssessment",

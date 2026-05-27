@@ -286,6 +286,17 @@ struct EntryComponent {
         .settingListItemFancy()
 
         ListItem() {
+          // systemNavigation
+          SettingItemComponent({
+            targetPage: "pages/systemNavigation",
+            settingTitle: $r("app.string.systemNavigationTab"),
+            settingEndText:$endTextEmpty,
+            settingIcon: "/res/image/system.svg",
+          })
+        }
+        .settingListItemFancy()
+
+        ListItem() {
           // volumeControl
           SettingItemComponent({
             targetPage: "pages/volumeControl",

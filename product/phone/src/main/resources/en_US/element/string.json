@@ -1885,6 +1885,26 @@
     {
       "name": "screenTimeoutNever",
       "value": "Never"
+    },
+    {
+      "name": "systemNavigationTab",
+      "value": "System navigation"
+    },
+    {
+      "name": "systemNavigationGesture",
+      "value": "Gestures"
+    },
+    {
+      "name": "systemNavigationGestureDescription",
+      "value": "Swipe up from the bottom edge to go home; pull and hold to open recent apps."
+    },
+    {
+      "name": "systemNavigationThreeButton",
+      "value": "Three-button navigation"
+    },
+    {
+      "name": "systemNavigationThreeButtonDescription",
+      "value": "Show back, home and recents buttons at the bottom of the screen."
     }
   ]
 }

@@ -1899,6 +1899,26 @@
     {
       "name": "screenTimeoutNever",
       "value": "永不"
+    },
+    {
+      "name": "systemNavigationTab",
+      "value": "系统导航方式"
+    },
+    {
+      "name": "systemNavigationGesture",
+      "value": "手势导航"
+    },
+    {
+      "name": "systemNavigationGestureDescription",
+      "value": "从屏幕底部边缘上滑返回主屏幕,上滑并停顿打开多任务"
+    },
+    {
+      "name": "systemNavigationThreeButton",
+      "value": "屏幕内三键导航"
+    },
+    {
+      "name": "systemNavigationThreeButtonDescription",
+      "value": "屏幕底部显示返回、主屏幕和最近任务按钮"
     }
   ]
 }

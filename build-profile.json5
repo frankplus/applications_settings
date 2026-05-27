@@ -9,6 +9,20 @@
         "targetSdkVersion": 23,
         "runtimeOS": "OpenHarmony"
       }
+    ],
+    "signingConfigs": [
+      {
+        "name": "release",
+        "material": {
+          "certpath": "./signatures/OpenHarmonyApplication.cer",
+          "storePassword": "0000001614ac2d0cf08f7c107e4a53a1c6cc863958cbb1608c985f83cc92e41a83c4f74dc287",
+          "keyAlias": "OpenHarmony Application Release",
+          "keyPassword": "0000001679c95938735a6c576cf43230ed86e02c3abb1633d092f3256bb6fbc7cc9c68e65002",
+          "profile": "./signatures/app1-profile.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "./signatures/OpenHarmony.p12"
+        }
+      }
     ]
   },
   "modules": [
